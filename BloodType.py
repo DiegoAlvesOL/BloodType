@@ -75,65 +75,65 @@ def receives_donation (blood_user):
         return donors_Ominus
 
 # Welcome message.
-print("+","-"*50 ,"+")
-print("|  Welcome to the Blood Type Compatibility Checker!  |")
-print("+","-"*50,"+\n")
-
-# Main program loop that displays the menu and runs until the user chooses to exit.
-while True:
-    print("+","-"*50,"+")
-    print("| Choose an option: "," "*31, "|")
-    print("| 1. Check what type of blood you can recive."," "*6, "|")
-    print("| 2. Check which blood type you can donate to."," "*5, "|")
-    print("| 3. Exit the program."," "*29, "|")
-    print("+","-"*50,"+\n")
-
-    # Captures the user's choice and applies .strip() to remove extra spaces at the beginning or end of the entry.
-    choice = input("Enter your choice 1,2 or 3: ").strip()
-    if choice == "3":
-        print("+","-"*43,"+")
-        print("| Thank you for using the BloodType. Goodbye! |")
-        print("+","-"*43,"+")
-        break
-
-    # If the user types 1 they will fall into this structure which will ask them to type their blood type.
-    # The input is treated with .upper(), .strip() and .replace() to ensure that:
-    # - all letters are capitalised
-    # - spaces at the beginning, middle and end are removed
-    elif choice == "1":
-        blood_user = input("Please, enter with your blood type: ").upper().strip().replace(" ", "")
-        if not valid_blood_type(blood_user):
-            print("+","-"*38,"+")
-            print("| The blood type you entered is invalid. |")
-            print("+","-"*38,"+\n")
-        else:
-            donors = get_donation(blood_user)
-            print("Please wait a moment while we process your information...")
-            for i in range(5,-1,-1):
-                print(i)
-                time.sleep(0.5)
-            print("-"*103)
-            print(" Your blood type is {}, you can receive blood from: {}".format(blood_user, donors))
-            print("-"*102,"\n")
-
-    # If the user chooses option 2, the same entry and validation process is carried out.
-    elif choice == "2":
-        blood_user = input("Please, enter with your blood type: ").upper().strip().replace(" ", "")
-        if not valid_blood_type(blood_user):
-            print("+","-"*38,"+")
-            print("| The blood type you entered is invalid. |")
-            print("+","-"*38,"+\n")
-        else:
-            receiver = receives_donation(blood_user)
-            for j in range(5,-1,-1):
-                print(j)
-                time.sleep(0.5)
-            print("-"*102)
-            print("Your blood type is {}, and you can donate blood to: {}".format(blood_user,receiver))
-            print("-"*102,"\n")
-
-    # If the user enters an invalid option (other than 1, 2 or 3), an error message will be displayed.
-    else:
-        print("+","-"*68,"+")
-        print("| Invalid option! Please choose one of the options listed in the menu. |")
-        print("+","-"*68,"+\n")
+# print("+","-"*50 ,"+")
+# print("|  Welcome to the Blood Type Compatibility Checker!  |")
+# print("+","-"*50,"+\n")
+#
+# # Main program loop that displays the menu and runs until the user chooses to exit.
+# while True:
+#     print("+","-"*50,"+")
+#     print("| Choose an option: "," "*31, "|")
+#     print("| 1. Check what type of blood you can recive."," "*6, "|")
+#     print("| 2. Check which blood type you can donate to."," "*5, "|")
+#     print("| 3. Exit the program."," "*29, "|")
+#     print("+","-"*50,"+\n")
+#
+#     # Captures the user's choice and applies .strip() to remove extra spaces at the beginning or end of the entry.
+#     choice = input("Enter your choice 1,2 or 3: ").strip()
+#     if choice == "3":
+#         print("+","-"*43,"+")
+#         print("| Thank you for using the BloodType. Goodbye! |")
+#         print("+","-"*43,"+")
+#         break
+#
+#     # If the user types 1 they will fall into this structure which will ask them to type their blood type.
+#     # The input is treated with .upper(), .strip() and .replace() to ensure that:
+#     # - all letters are capitalised
+#     # - spaces at the beginning, middle and end are removed
+#     elif choice == "1":
+#         blood_user = input("Please, enter with your blood type: ").upper().strip().replace(" ", "")
+#         if not valid_blood_type(blood_user):
+#             print("+","-"*38,"+")
+#             print("| The blood type you entered is invalid. |")
+#             print("+","-"*38,"+\n")
+#         else:
+#             donors = get_donation(blood_user)
+#             print("Please wait a moment while we process your information...")
+#             for i in range(5,-1,-1):
+#                 print(i)
+#                 time.sleep(0.5)
+#             print("-"*103)
+#             print(" Your blood type is {}, you can receive blood from: {}".format(blood_user, donors))
+#             print("-"*102,"\n")
+#
+#     # If the user chooses option 2, the same entry and validation process is carried out.
+#     elif choice == "2":
+#         blood_user = input("Please, enter with your blood type: ").upper().strip().replace(" ", "")
+#         if not valid_blood_type(blood_user):
+#             print("+","-"*38,"+")
+#             print("| The blood type you entered is invalid. |")
+#             print("+","-"*38,"+\n")
+#         else:
+#             receiver = receives_donation(blood_user)
+#             for j in range(5,-1,-1):
+#                 print(j)
+#                 time.sleep(0.5)
+#             print("-"*102)
+#             print("Your blood type is {}, and you can donate blood to: {}".format(blood_user,receiver))
+#             print("-"*102,"\n")
+#
+#     # If the user enters an invalid option (other than 1, 2 or 3), an error message will be displayed.
+#     else:
+#         print("+","-"*68,"+")
+#         print("| Invalid option! Please choose one of the options listed in the menu. |")
+#         print("+","-"*68,"+\n")
